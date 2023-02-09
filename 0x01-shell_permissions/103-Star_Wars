@@ -1,2 +1,2 @@
 #!/bin/bash
-MicrosoftTelnet> o (to) towel.blinkenlights.nl
+telnet blinkenlights.nl
