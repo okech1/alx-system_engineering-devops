@@ -1,0 +1,2 @@
+#!/bin/bash
+echo -e "\033[1;32mlets begin the show!\033[om"
