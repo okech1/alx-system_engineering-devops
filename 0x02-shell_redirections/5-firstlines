@@ -1,2 +1,2 @@
 #!/bin/bash
-haed -10 /etc/passwd
+haed -10/etc/passwd
