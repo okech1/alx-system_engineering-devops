@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
-# Kills the process with the specified name
 
-# Get the PID of the process named "4-to_infinity_and_beyond" excluding the script's own PID
-pid=$(pgrep -f "4-to_infinity_and_beyond" | grep -v $$)
+# Assume the process you want to terminate is named "4-to_infinity_and_beyond"
+target_process_name="4-to_infinity_and_beyond"
 
-# Check if a matching process was found
-if [ -n "$pid" ]; then
-  # Kill the process
-  kill "$pid"
-  echo "Process with PID $pid killed."
+# Get the PID of the process
+target_pid=$(pgrep -f "$target_process_name")
+
+if [ -n "$target_pid" ]; then
+  echo "Terminating the process with PID $target_pid..."
+  # Send a SIGTERM signal to the process
+  kill -15 "$target_pid"
 else
-  echo "No matching process found."
+  echo "No process found with the name '$target_process_name'."
 fi
