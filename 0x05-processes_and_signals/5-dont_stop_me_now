@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Kills the process with the specified name
+
+# Get the PID of the process named "To infinity and beyond"
+pid=$(pgrep -f "To infinity and beyond")
+
+# Check if a matching process was found
+if [ -n "$pid" ]; then
+  # Kill the process
+  kill "$pid"
+  echo "Process with PID $pid killed."
+else
+  echo "No matching process found."
+fi
