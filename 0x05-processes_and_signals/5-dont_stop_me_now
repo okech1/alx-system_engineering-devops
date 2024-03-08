@@ -1,15 +1,17 @@
 #!/usr/bin/env bash
 
-# Assume the process you want to terminate is named "4-to_infinity_and_beyond"
+# The process to be stopped is named "4-to_infinity_and_beyond"
 target_process_name="4-to_infinity_and_beyond"
 
 # Get the PID of the process
 target_pid=$(pgrep -f "$target_process_name")
 
 if [ -n "$target_pid" ]; then
-  echo "Terminating the process with PID $target_pid..."
+  echo "Stopping the process with PID $target_pid..."
   # Send a SIGTERM signal to the process
   kill -15 "$target_pid"
+  # Alternatively, use kill -9 for a forceful termination if necessary:
+  # kill -9 "$target_pid"
 else
   echo "No process found with the name '$target_process_name'."
 fi
