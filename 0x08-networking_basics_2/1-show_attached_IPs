@@ -1,3 +1,8 @@
-splays all acive IPv4 addresses on the machine.
+#!/usr/bin/env bash
+# Displays all active IPv4 addresses on the machine.
 
-ifconfig | grep -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" | cut -b 11-
+# Extract IPv4 addresses from the output of the 'hostname' command
+ipv4_addresses=$(hostname -I)
+
+# Print each IPv4 address
+echo "$ipv4_addresses"
