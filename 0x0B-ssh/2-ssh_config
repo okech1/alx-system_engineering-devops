@@ -1,4 +1,4 @@
-Host 54.89.27.135
-IdentityFile ~/.ssh/school
-PreferredAuthentications school.pub
-PasswordAuthentication no
+Host 54.198.68.192
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no
+    User ubuntu
