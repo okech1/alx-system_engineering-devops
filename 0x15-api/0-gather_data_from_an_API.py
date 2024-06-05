@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """script for parsing web data from an api
 """
 
@@ -10,10 +9,10 @@ import sys
 base_url = 'https://jsonplaceholder.typicode.com/'
 
 try:
-    employee_id = sys.argv[1]
+  employee_id = sys.argv[1]
 except:
-    print('Usage: {} employee_id'.format(sys.argv[0]))
-    exit(1)
+  print('Usage: {} employee_id'.format(sys.argv[0]))
+  exit(1)
 
 # grab the info about the user
 url = base_url + 'users?id={}'.format(employee_id)
@@ -28,12 +27,12 @@ objs = json.loads(response.text)
 completed = 0
 completed_tasks = []
 for obj in objs:
-    if obj.get('completed'):
-        completed_tasks.append(obj)
-        completed += 1
+  if obj.get('completed'):
+    completed_tasks.append(obj)
+    completed += 1
 
 # print the output about user's task completion
 print("{} is done with tasks({}/{}):".format(name, completed, len(objs)))
 # print the output title of completed tasks
 for task in completed_tasks:
-    print("\t {}".format(task.get('title')))
+  print("\t {}".format(task.get('title')))
